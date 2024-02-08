@@ -1,0 +1,22 @@
+﻿@page "/todo"
+@using BlazorIntro.Components
+
+<h3>Todos</h3>
+
+<button class="btn btn-primary" @onclick="AddTodo">Add todo</button>
+
+<ul>
+	@foreach (var todoItem in TodoItems)
+	{
+		<TodoItem Title="@todoItem.Title" IsDone="@todoItem.IsDone"></TodoItem>
+	}
+</ul>
+
+@code {
+	public List<TodoItem> TodoItems { get; set; } = new List<TodoItem>();
+
+	private void AddTodo()
+	{
+		TodoItems.Add(new TodoItem() { Title = "Ny todo", IsDone = false });
+	}
+}

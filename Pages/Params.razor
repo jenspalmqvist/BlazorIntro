@@ -1,0 +1,10 @@
+﻿@page "/params/{number:int}/{text?}"
+
+<h3>The params are: @Text @Number</h3>
+
+@code {
+	[Parameter]
+	public string? Text { get; set; }
+	[Parameter]
+	public int Number { get; set; }
+}

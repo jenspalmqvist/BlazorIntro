@@ -1,0 +1,9 @@
+﻿
+<li class="@(IsDone?"bg-success":"bg-danger")" @onclick="() => IsDone = !IsDone"><input @bind=Title /></li>
+
+@code {
+	[Parameter]
+	public string? Title { get; set; }
+	[Parameter]
+	public bool IsDone { get; set; }
+}
